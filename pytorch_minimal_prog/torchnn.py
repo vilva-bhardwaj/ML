@@ -61,10 +61,10 @@ def inference(clf, img, device):
 
 # Training flow 
 if __name__ == "__main__": 
-    device = 'cuda' if torch.cuda() else 'cpu'
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
     clf = ImageClassifier().to(device)
     # for training
-    training(clf, 10, device)
+    # training(clf, 10, device)
 
     # for inference
     inference(clf, 'img_3.jpg', device)
